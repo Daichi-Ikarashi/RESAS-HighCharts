@@ -3,7 +3,6 @@ import './App.css';
 import Main from './components/Main';
 
 const App = () => {
-  console.log(process.env.REACT_APP_API_KEY);
   return (
     <div className="App">
       <header className="App-header">
