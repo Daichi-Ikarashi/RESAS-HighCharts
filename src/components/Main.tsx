@@ -73,15 +73,14 @@ const Main = () => {
 
     return (
         <main>
-            <h2 className="label">都道府県</h2>
+            <p className="label">都道府県</p>
                 {prefectures && (
                     <SelectButtons
                         prefectures={prefectures.result}
                         onChange={handleClickCheck}
                     />
                 )}
-            <h2 className="label">人口推移グラフ</h2>
-                <Graph populationdata={prefPopulation} />
+            <Graph populationdata={prefPopulation} />
         </main>
     );
 };

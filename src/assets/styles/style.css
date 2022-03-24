@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+}
+
+/* App.tsx ヘッダー */
+.App-header {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(192, 192, 192, 0.8);
+    margin-bottom: 20px;
+}
+
+.App-header .title {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 50px;
+    text-align: center;
+}
+
+/* SelectButtons.tsx の ボタンたちの親 */
+.selectButtonsField {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 8px auto;
+    padding: 0 16px;
+    justify-content: flex-start;
+}
+
+/* SelectButtons.tsx の チェックボタンの親 */
+.selectButtonContainer {
+    text-align: center;
+    margin: 4px 0;
+}
+
+/* SelectButtons.tsx の チェックボックス */
+.checkbox {
+    transform: scale(1.4);
+}
+
+/* SelectButtons.tsx の ボタンの文字 */
+.text {
+    display: inline-block;
+    width: 64px;
+    cursor: pointer;
+    margin: 0 10px 0 4px;
+}
+
+/* Graph.tsx の グラフ */
+.graph {
+    padding: 0 8px;
+}
+
+/* Main.tsx の p */
+.label {
+    font-size: 18px;
+    margin-left: 12px;
+    margin-bottom: 10px;
+}
+
+@media screen and (min-width: 481px) {
+	/* 481px以上に適用されるCSS（タブレット用） */
+    * {
+        font-size: 20px;
+    }
+    body {
+        width: 100%;
+        margin: 0 auto;
+    }
+    .label {
+        text-align: center;
+        font-weight: 600;
+    }
+    .selectButtonsField {
+        width: 80vw;
+        padding: 0 20px;
+        margin: 20px auto;
+    }
+    .text {
+        width: 80px;
+    }
+}
+@media screen and (min-width: 960px) {
+	/* 960px以上に適用されるCSS（PC用） */
+    body {
+        width: 70vw;
+        margin: 0 auto;
+    }
+    .selectButtonContainer {
+        margin-right: 20px;
+    }
+}

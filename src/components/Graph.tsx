@@ -32,7 +32,7 @@ const Graph = ({ populationdata } : Props) => {
     // Highchatsの設定
     const options: Highcharts.Options = {
         title: {
-            text: "総人口推移",
+            text: "人口推移グラフ",
         },
         // x軸
         xAxis: {

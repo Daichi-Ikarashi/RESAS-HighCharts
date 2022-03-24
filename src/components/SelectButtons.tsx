@@ -18,6 +18,7 @@ const SelectButtons = ({ prefectures, onChange }: Props) => {
                 {prefectures.map((prefecture) => (
                     <div className="selectButtonContainer" key={prefecture.prefName}>
                         <input
+                            className="checkbox"
                             type="checkbox"
                             name="Prefecture name"
                             onChange={(event) => 
