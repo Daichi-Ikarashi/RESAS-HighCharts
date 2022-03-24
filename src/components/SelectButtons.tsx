@@ -1,25 +1,25 @@
-import { trace } from "console";
 import React from "react";
 
 type Props = {
-    prefectures: {
-        prefCode: number;
-        prefName: string;
-    }[];
+    prefectures:
+        | {
+            prefCode: number;
+            prefName: string;
+        }[];
 
     onChange: (name: string, prefName: number, check: boolean) => void;
 };
 
 // 都道府県一覧のボタンを表示コンポーネント
-const SelectButtons = ({prefectures, onChange}) => {
+const SelectButtons = ({ prefectures, onChange }: Props) => {
     return (
         <>
             <div className="selectButtonsField">
                 {prefectures.map((prefecture) => (
                     <div className="selectButtonContainer" key={prefecture.prefName}>
                         <input
-                            type="checkvox"
-                            name="prefecture name"
+                            type="checkbox"
+                            name="Prefecture name"
                             onChange={(event) => 
                                 onChange(
                                     prefecture.prefName,

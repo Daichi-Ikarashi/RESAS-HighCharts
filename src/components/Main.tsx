@@ -13,19 +13,18 @@ const Main = () => {
         }[];
     } | null>(null);
     
-    const [prefPopulation, setPrefPopulation] = useState< {
+    const [prefPopulation, setPrefPopulation] = useState <{
         prefName: string; data: { year: number; value: number }[] }[]
     >([]);
 
     useEffect(() => {
         // 都道府県一覧を取得する
-        axios.get("https://opendata.resas-portal.go.jp/api/v1/prefectures",
-        {
-            headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
-        })
-        .then((results) => {
-            setPreFectures(results.data);
-        })
+        axios.get("https://opendata.resas-portal.go.jp/api/v1/prefectures", {
+            headers: { "X-API-KEY" : String(process.env.REACT_APP_API_KEY) },
+      })
+      .then((results) => {
+        setPreFectures(results.data);
+      })
         .catch((error) => {});
     }, []);
 
@@ -39,24 +38,24 @@ const Main = () => {
 
         // チェックをつけた処理
         if (check) {
-            if ( c_prefPopulation.findIndex((value) => value.prefName === prefName) !== -1)
+            if (c_prefPopulation.findIndex((value) => value.prefName === prefName) !== -1)
                 return;
 
-                axios.get(
-                    "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode="
-                    + String(prefCode),
-                    {
-                        headers: { "X-API-KEY": process.env.REACT_APP_API_KEY },
-                    }
-                )
-                .then((results) => {
-                    c_prefPopulation.push({
-                        prefName: prefName,
-                        data: results.data.result.data[0].data,
-                    });
+            axios.get(
+                "https://opendata.resas-portal.go.jp/api/v1/population/composition/perYear?prefCode="
+                + String(prefCode),
+                {
+                    headers: { "X-API-KEY": String(process.env.REACT_APP_API_KEY) },
+                }
+            )
+            .then((results) => {
+                c_prefPopulation.push({
+                    prefName: prefName,
+                    data: results.data.result.data[0].data,
+                });
 
-                    setPrefPopulation(c_prefPopulation);
-                })
+                setPrefPopulation(c_prefPopulation);
+            })
             .catch((error) => {
                 return;
             });
