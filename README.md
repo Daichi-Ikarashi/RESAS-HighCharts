@@ -28,10 +28,5 @@ Linter : ESLint
 
 library install
 axios : HTTP通信用 https://axios-http.com/docs/intro
-npm install axios
-
 highbharts : グラフ描画ライブラリ
 highbharts-react-official : React用 highcharts
-
-npm install highbharts
-npm install highbharts-react-official
