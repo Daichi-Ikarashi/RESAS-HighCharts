@@ -26,7 +26,7 @@ Linter : ESLint
 
 プロジェクト作成 : create-react-app
 
-library install
+### library
 axios : HTTP通信用 https://axios-http.com/docs/intro
 highbharts : グラフ描画ライブラリ
 highbharts-react-official : React用 highcharts
